@@ -23,7 +23,7 @@
                         <a class="nav-link" href="{{route('item')}}" id="item">Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="customer">Customer</a>
+                        <a class="nav-link" href="{{route('customer')}}" id="customer">Customer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('supplier')}}" id="supplier">Supplier</a>
