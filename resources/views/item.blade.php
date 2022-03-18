@@ -76,11 +76,26 @@ Aide Shoes | Item
                   <td>{{$a->no_sepatu}}</td>
                   <td>{{$a->stok}}</td>
                   <td>{{$a->harga}}</td>
-
                 </tr>
               </tbody>
             @endforeach
           </table>
+
+          <div class="paginate">
+            <div class="container">
+                <div class="row">
+                    <div class="detail-data col-md-12">
+                        <p>Page : {{ $item->currentPage() }} <br />
+                            Jumlah Data : {{ $item->total() }} <br />
+                            Data Per Halaman : {{ $item->perPage() }} <br />
+                        </p>
+                    </div>
+                    <div class="paginate-button col-md-12">
+                        {{$item->links()}}
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
 </div>
