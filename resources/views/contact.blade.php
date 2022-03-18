@@ -171,7 +171,7 @@
 
 @section('js')
     <script>
-        $('#contact').addClass('actiive');
+        $('#contact').addClass('active');
     </script>
 @endsection
 
