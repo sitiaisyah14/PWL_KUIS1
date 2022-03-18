@@ -20,7 +20,7 @@
                     <a class="nav-link" href="{{route('contact')}}" id="contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('employee')}}">Employee</a>
+                        <a class="nav-link" href="{{route('employee')}}" id="employee">Employee</a>
                     </li>
                 </ul>
             </div>
