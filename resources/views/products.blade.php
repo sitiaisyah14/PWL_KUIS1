@@ -159,3 +159,9 @@
       </div>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        $('#products').addClass('active');
+    </script>
+@endsection
