@@ -6,13 +6,13 @@
 
 @section('content')
     <!-- Page Content -->
-    <div class="page-heading employee-heading header-text">
+    <div class="page-heading supplier-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>employee</h4>
-              <h2>company organization</h2>
+              <h4>supplier</h4>
+              <h2>our supplier</h2>
             </div>
           </div>
         </div>
@@ -25,18 +25,20 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Company Team</h2>
+              <h2>Supplier Explanation</h2>
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="{{asset('/images/feature2-image.png')}}" alt="">
+              <img src="{{asset('/images/feature3-image.jpg')}}" alt="">
             </div>
           </div>
           <div class="col-md-6">
             <div class="left-content">
-              <h4>Who we are &amp; What we do?</h4>
-              <p> Here is the organizational structure of our company. In the organizational structure, the highest level is the Owner. Then the CEO or Chief Executive Officer, better known as the President Director. CFO or Chief Financial Officer, better known as the Director of Finance. CTO or Chief Technology Officer, better known as the IT Director. After that there is the head of production, warehouse, marketing, and quality control. At the final level are employees from each division.<br><br>We have responsibilities according to each position. Work with discipline, punctual and professional is our principle.</p>
+              <h4>What are Suppliers &amp; What is the supplier's advantage?</h4>
+              <p>Suppliers are individuals or companies/businesses that provide products or services to other entities. In business, suppliers play a role in providing distributors or retailers with high quality products at good prices for resale.
+                    <br><br>
+                    Our suppliers are from various regions in Indonesia. Our suppliers are about 10 people who have trusted us about 7 years. We always provide separate prices for suppliers. In addition, we also give a bonus every month as a reward for the supplier who has taken the most goods. Sometimes we also give discounts every month, if the supplier takes the highest quantity or total price.</p>
               <ul class="social-icons">
                 <button type="button" class="btn btn-secondary btn-sm">Read More</button>
               </ul>
@@ -51,7 +53,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="section-heading">
-                <h2>Company Employee Bio</h2>
+                <h2>Supplier Details</h2>
               </div>
             </div>
             <table class="table">
@@ -95,13 +97,13 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Our Big Teams</h2>
+              <h2>Best Supplier</h2>
             </div>
           </div>
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team_01.jpg')}}" alt="">
+                <img src="{{asset('/images/supplier1-images.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -114,16 +116,16 @@
                 </div>
               </div>
               <div class="down-content">
-                <h4>Handika Pratama</h4>
-                <span>Owner</span>
-                <p>I am the owner of this shoe business company.</p>
+                <h4>Rahman Adiwijaya</h4>
+                <span>PT. Wijaya Sentosa</span>
+                <p>This supplier has a company located on Jl. Kh. Wachid Hasyim No.24, Bangilan, Panggungrejo, Pasuruan City, East Java 67116</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team 07.jpg')}}" alt="">
+                <img src="{{asset('/images/supplier3-images.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -136,16 +138,16 @@
                 </div>
               </div>
               <div class="down-content">
-                <h4>Siti Aisyah</h4>
-                <span>Chief Financial Officer (CFO) </span>
-                <p>I am the CFO of this shoe business, in charge of the company's finances.</p>
+                <h4>Muhammad Kariono</h4>
+                <span>PT. Sepatu Bandung Jaya</span>
+                <p>This supplier has a company located on Jl. A. Yani No.87, Kb. Banana, District. Sumur, Bandung, Bandung City, West Java 40262</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team 09.jpg')}}" alt="">
+                <img src="{{asset('/images/supplier2-images.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -158,144 +160,13 @@
                 </div>
               </div>
               <div class="down-content">
-                <h4>Halifan Izmi Oktavian</h4>
-                <span>Chief Executive Officer (CEO)</span>
-                <p>I am the CEO or so-called president director of this shoe business.</p>
+                <h4>Hj. Faisal</h4>
+                <span>Toko Abdullah</span>
+                <p>This supplier has a company located on Jl. Tukad Ijo Gading No. 8, Dauh Puri Klod, South Denpasar, Denpasar City, Bali 80234</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('/images/team_04.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Aprilia Faranisa Azni</h4>
-                <span>Chief Technology Officer (CTO)</span>
-                <p>I am the CEO or so-called IT director of this shoe business..</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('/images/team_05.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Arwin Santosa</h4>
-                <span>Quality Control</span>
-                <p>I am the quality control of this shoe business company.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('images/team_06.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Rohimah Dahlia</h4>
-                <span>Quality Control</span>
-                <p>I am the quality control of this shoe business company.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('/images/team_02.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Alvina Khoiriyah</h4>
-                <span>Head of Marketing</span>
-                <p>I am the head of marketing for this shoe business.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('/images/team 10.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Handra Rahmano</h4>
-                <span>Head of Production</span>
-                <p>I am the head of production of this shoe business company.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="{{asset('images/team 08.jpg')}}" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Rina Sania</h4>
-                <span>Head of Warehouse</span>
-                <p>I am the head of warehouse of this shoe business company.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
