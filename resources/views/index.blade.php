@@ -205,3 +205,9 @@
       </div>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        $('#home').addClass('active');
+    </script>
+@endsection
