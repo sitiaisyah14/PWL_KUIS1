@@ -169,3 +169,9 @@
     </div>
 @endsection
 
+@section('js')
+    <script>
+        $('#contact').addClass('actiive');
+    </script>
+@endsection
+
