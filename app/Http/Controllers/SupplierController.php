@@ -8,7 +8,7 @@ use App\Models\supplier;
 class SupplierController extends Controller
 {
     public function supplier(){
-        $data = supplier::all();
+        $data = supplier::paginate(4);
         return view('supplier', ['supplier'=>$data]);
     }
 }
