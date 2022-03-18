@@ -257,3 +257,9 @@
       </div>
     </div>
 @endsection
+
+@section('js')
+    <script>
+        $('#employee').addClass('active');
+    </script>
+@endsection
