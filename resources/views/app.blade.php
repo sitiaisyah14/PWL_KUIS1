@@ -9,6 +9,7 @@
 
         <title>@yield('title')</title>
 
+
         <!-- Bootstrap core CSS -->
         <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
@@ -16,6 +17,8 @@
         <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
         <link rel="stylesheet" href="{{asset('css/templatemo-sixteen.css')}}">
         <link rel="stylesheet" href="{{asset('css/owl.css')}}">
+        <link rel="shortcut icon" href="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-shoes-fitness-gym-justicon-flat-justicon.png"" type="image/x-icon" />
+
     </head>
 
     <body>
