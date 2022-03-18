@@ -8,8 +8,8 @@ use App\Models\Item;
 class ItemController extends Controller
 {
     public function item(){
-        $dataitem = Item::all();
-        
+        $dataitem = Item::paginate(3);
+
         return view('item')
             -> with('item',$dataitem);
     }
