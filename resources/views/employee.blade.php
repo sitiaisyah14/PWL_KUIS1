@@ -46,6 +46,47 @@
       </div>
     </div>
 
+    <div class="best-features about-features">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <h2>Company Employee Bio</h2>
+              </div>
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Place of Birth</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Wages</th>
+                  </tr>
+                </thead>
+                @foreach ($employe as $data)
+                <tbody>
+                    <tr>
+                      <td scope="row">{{$data->id}}</td>
+                      <td>{{$data->name}}</td>
+                      <td>{{$data->gender}}</td>
+                      <td>{{$data->place_of_birth}}</td>
+                      <td>{{$data->date_of_birth}}</td>
+                      <td>{{$data->phone_number}}</td>
+                      <td>{{$data->status}}</td>
+                      <td>{{$data->position}}</td>
+                      <td>{{$data->wages}}</td>
+                    </tr>
+                  </tbody>
+                @endforeach
+              </table>
+          </div>
+        </div>
+    </div>
 
     <div class="team-members">
       <div class="container">
