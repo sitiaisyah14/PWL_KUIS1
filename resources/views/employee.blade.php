@@ -68,7 +68,7 @@
                     <th scope="col">Wages</th>
                   </tr>
                 </thead>
-                @foreach ($employe as $data)
+                @foreach ($employee as $data)
                 <tbody>
                     <tr>
                       <td scope="row">{{$data->id}}</td>
