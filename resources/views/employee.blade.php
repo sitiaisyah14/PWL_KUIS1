@@ -6,13 +6,13 @@
 
 @section('content')
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text">
+    <div class="page-heading employee-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
               <h4>employee</h4>
-              <h2>our company</h2>
+              <h2>company organization</h2>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="{{asset('/images/feature-image.jpg')}}" alt="">
+              <img src="{{asset('/images/feature2-image.png')}}" alt="">
             </div>
           </div>
           <div class="col-md-6">
@@ -121,7 +121,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team_02.jpg')}}" alt="">
+                <img src="{{asset('/images/team 07.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -143,7 +143,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team_03.jpg')}}" alt="">
+                <img src="{{asset('/images/team 09.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -253,7 +253,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('/images/team_01.jpg')}}" alt="">
+                <img src="{{asset('/images/team 10.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
@@ -275,7 +275,7 @@
           <div class="col-md-4">
             <div class="team-member">
               <div class="thumb-container">
-                <img src="{{asset('images/team_04.jpg')}}" alt="">
+                <img src="{{asset('images/team 08.jpg')}}" alt="">
                 <div class="hover-effect">
                   <div class="hover-content">
                     <ul class="social-icons">
