@@ -91,6 +91,21 @@
           </div>
         </div>
     </div>
+    <div class="paginate">
+        <div class="container">
+            <div class="row">
+                <div class="detail-data col-md-12">
+                    <p>Page : {{ $supplier->currentPage() }} <br />
+                        Data Count : {{ $supplier->total() }} <br />
+                        Data Per Page : {{ $supplier->perPage() }} <br />
+                    </p>
+                </div>
+                <div class="paginate-button col-md-12">
+                    {{$supplier->links()}}
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="team-members">
       <div class="container">
