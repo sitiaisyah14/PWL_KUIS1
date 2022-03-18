@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\employe;
+use App\Models\employee;
 
 class EmployeeController extends Controller
 {
     public function employee(){
-        $data = employe::all();
-        return view('employe', ['employe'=>$data]);
+        $data = employee::all();
+        return view('employee', ['employee'=>$data]);
     }
 }
