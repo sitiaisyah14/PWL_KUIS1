@@ -11,13 +11,22 @@
                     <a class="nav-link" href="{{route('home')}}" id="home">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('products')}}" id="products">Our Products</a>
+                    <a class="nav-link" href="{{route('products')}}" id="products">Products</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('about')}}" id="about">About Us</a>
+                    <a class="nav-link" href="{{route('about')}}" id="about">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{route('contact')}}" id="contact">Contact Us</a>
+                    <a class="nav-link" href="{{route('contact')}}" id="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('item')}}" id="item">Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="customer">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="supplier">Supplier</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('employee')}}" id="employee">Employee</a>
