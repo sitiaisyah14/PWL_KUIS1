@@ -107,6 +107,10 @@ a.filled-button:hover {
     background-image: url(../images/employee-heading.png);
 }
 
+.supplier-heading {
+    background-image: url(../images/supplier-heading.png);
+}
+
 .page-heading {
 	padding: 210px 0px 130px 0px;
 	text-align: center;
