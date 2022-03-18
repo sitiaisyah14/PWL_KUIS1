@@ -22,3 +22,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('products', [ProductsController::class, 'products'])->name('products');
 Route::get('about', [AboutController::class, 'about'])->name('about');
 Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+
+Route::get('employee', [EmployeController::class, 'employee'])->name('employee');
