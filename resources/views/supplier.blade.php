@@ -46,7 +46,49 @@
       </div>
     </div>
 
-
+    <div class="best-features about-features">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <h2>Company Employee Bio</h2>
+              </div>
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Districts</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">Postal Code</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Bank</th>
+                    <th scope="col">Account Number</th>
+                  </tr>
+                </thead>
+                @foreach ($supplier as $data)
+                <tbody>
+                    <tr>
+                      <td scope="row">{{$data->id}}</td>
+                      <td>{{$data->name}}</td>
+                      <td>{{$data->company_name}}</td>
+                      <td>{{$data->address}}</td>
+                      <td>{{$data->districts}}</td>
+                      <td>{{$data->province}}</td>
+                      <td>{{$data->postal_code}}</td>
+                      <td>{{$data->phone_number}}</td>
+                      <td>{{$data->bank}}</td>
+                      <td>{{$data->no_rek}}</td>
+                    </tr>
+                  </tbody>
+                @endforeach
+              </table>
+          </div>
+        </div>
+    </div>
 
     <div class="team-members">
       <div class="container">
