@@ -5,7 +5,7 @@ Aide Shoes | Customers
 @endsection
 
 @section('content')
-<div class="page-heading shoes-heading header-text">
+<div class="page-heading customer-heading header-text">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -28,7 +28,7 @@ Aide Shoes | Customers
             </div>
             <div class="col-md-6">
                 <div class="right-image">
-                    <img src="{{asset('/images/feature-image.jpg')}}" alt="">
+                    <img src="{{asset('images/customer.png')}}" alt="">
                 </div>
             </div>
             <div class="col-md-6">
@@ -67,7 +67,7 @@ Aide Shoes | Customers
                         <th scope="col">Gender</th>
                         <th scope="col">Place Of Birth</th>
                         <th scope="col">Date Of Birth</th>
-                        <th scope="col">Address</th>
+                        <th scope="col" width="20%">Address</th>
                         <th scope="col">Telephone</th>
                     </tr>
                 </thead>
