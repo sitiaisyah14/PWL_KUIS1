@@ -33,3 +33,4 @@ Route::get('supplier', [SupplierController::class, 'supplier'])->name('supplier'
 Route::get('customer', [CustomerController::class, 'customer'])->name('customer');
 
 Route::get('login', [HomeController::class,'login']);
+Route::get('register', [HomeController::class,'register']);
