@@ -31,3 +31,5 @@ Route::get('employee', [EmployeeController::class, 'employee'])->name('employee'
 Route::get('item', [ItemController::class,'item'])->name('item');
 Route::get('supplier', [SupplierController::class, 'supplier'])->name('supplier');
 Route::get('customer', [CustomerController::class, 'customer'])->name('customer');
+
+Route::get('login', [HomeController::class,'login']);
