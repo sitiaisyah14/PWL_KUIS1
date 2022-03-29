@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     public function customer(){
         $data = Customer::paginate(3);
-        return view('customer')
+        return view('customer.customer')
         -> with('customer',$data);
     }
 }

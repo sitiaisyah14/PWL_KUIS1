@@ -9,6 +9,6 @@ class EmployeeController extends Controller
 {
     public function employee(){
         $data = employee::paginate(5);
-        return view('employee', ['employee'=>$data]);
+        return view('employee.employee', ['employee'=>$data]);
     }
 }

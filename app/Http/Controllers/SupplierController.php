@@ -9,6 +9,6 @@ class SupplierController extends Controller
 {
     public function supplier(){
         $data = supplier::paginate(4);
-        return view('supplier', ['supplier'=>$data]);
+        return view('supplier.supplier', ['supplier'=>$data]);
     }
 }

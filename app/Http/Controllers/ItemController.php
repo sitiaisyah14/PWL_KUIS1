@@ -10,7 +10,7 @@ class ItemController extends Controller
     public function item(){
         $dataitem = Item::paginate(3);
 
-        return view('item')
+        return view('product.item')
             -> with('item',$dataitem);
     }
 }
