@@ -33,13 +33,13 @@
         <!-- ***** Preloader End ***** -->
 
         <!-- Header -->
-        @include('navbar')
+        @include('layout.navbar')
 
         <!-- Content -->
         @yield('content')
 
         <!-- Footer -->
-        @include('footer')
+        @include('layout.footer')
 
 
 
