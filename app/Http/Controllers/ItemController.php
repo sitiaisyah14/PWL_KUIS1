@@ -109,7 +109,6 @@ class ItemController extends Controller
         //Melakukan validasi data
         $request->validate([
             'id_supplier' => 'required',
-            'gambar_sepatu' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'merk_sepatu' => 'required',
             'jenis_sepatu' => 'required',
             'no_sepatu' => 'required',
