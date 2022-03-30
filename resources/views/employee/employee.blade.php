@@ -53,26 +53,43 @@
               <div class="section-heading">
                 <h2>Company Employee Bio</h2>
               </div>
+              <div>
+                @if($message=Session::get('success'))
+                <div class="alert alert-success role="alert"">
+                    <h4 class="alert-heading">Well done!</h4>
+                    <p>{{$message}}</p>
+                </div>
+                @endif
+            </div>
+            <div class="float-right my-2">
+                <a class="btn btn-success" href="{{route('employee.create')}}"> Tambah Data Employee</a>
+            </div>
             </div>
             <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">email</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Place of Birth</th>
-                    <th scope="col">Date of Birth</th>
+                    <th scope="col" >Place of Birth</th>
+                    <th scope="col" >Date of Birth</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Status</th>
                     <th scope="col">Position</th>
                     <th scope="col">Wages</th>
                   </tr>
                 </thead>
-                @foreach ($employee as $data)
+                @foreach ($Employee as $data)
                 <tbody>
                     <tr>
                       <td scope="row">{{$data->id}}</td>
                       <td>{{$data->name}}</td>
+                      <td>{{$data->username}}</td>
+                      <td>{{$data->password}}</td>
+                      <td>{{$data->email}}</td>
                       <td>{{$data->gender}}</td>
                       <td>{{$data->place_of_birth}}</td>
                       <td>{{$data->date_of_birth}}</td>
@@ -80,6 +97,16 @@
                       <td>{{$data->status}}</td>
                       <td>{{$data->position}}</td>
                       <td>{{$data->wages}}</td>
+                      <td>
+                        <form action="{{ route('employee.destroy',  $data->id) }}" method="POST">
+                            <a class="btn btn-info" href="{{route('employee.show', $data->id)}}">Show</a>
+                            <a class="btn btn-primary" href="{{route('employee.edit', $data->id)}}">Edit</a>
+
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                     </tr>
                   </tbody>
                 @endforeach
@@ -91,13 +118,13 @@
         <div class="container">
             <div class="row">
                 <div class="detail-data col-md-12">
-                    <p>Page : {{ $employee->currentPage() }} <br />
-                        Data Count : {{ $employee->total() }} <br />
-                        Data Per Page : {{ $employee->perPage() }} <br />
+                    <p>Page : {!! $Employee->currentPage() !!} <br />
+                        Data Count : {!! $Employee->total() !!} <br />
+                        Data Per Page : {!! $Employee->perPage() !!} <br />
                     </p>
                 </div>
                 <div class="paginate-button col-md-12">
-                    {{$employee->links()}}
+                    {!! $Employee->links() !!}
                 </div>
             </div>
         </div>
