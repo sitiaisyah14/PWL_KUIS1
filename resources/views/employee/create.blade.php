@@ -3,8 +3,10 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;">
-            <div class="card-header"> Tambah Data Supplier </div>
+        <div class="card" style="width: 35rem;">
+            <div class="card-header">
+                <b>Tambah Data Employee</b>
+            </div>
             <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
