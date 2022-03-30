@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{route('supplier.index')}}" id="supplier">Supplier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('employee')}}" id="employee">Employee</a>
+                        <a class="nav-link" href="{{route('employee.index')}}" id="employee">Employee</a>
                     </li>
                 </ul>
             </div>
