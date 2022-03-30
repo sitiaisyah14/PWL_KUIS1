@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="postal_code">Postal Code</label> <br>
-                        <input type="text" name="postal_code" class="form-control" id="postal_code" aria-describedby="postal_code">
+                        <input type="number" name="postal_code" class="form-control" id="postal_code" aria-describedby="postal_code">
                     </div>
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label> <br>
