@@ -3,26 +3,57 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;">
+        <div class="card" style="width: 50rem;">
             <div class="card-header">
-                Detail Supplier
+                <b>Detail Supplier</b>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Id: </b>{{$Supplier->id}}</li>
-                    <li class="list-group-item"><b>Name: </b>{{$Supplier->name}}</li>
-                    <li class="list-group-item"><b>Company Name: </b>{{$Supplier->company_name}}</li>
-                    <li class="list-group-item"><b>Address: </b>{{$Supplier->address}}</li>
-                    <li class="list-group-item"><b>Districts: </b>{{$Supplier->districts}}</li>
-                    <li class="list-group-item"><b>Province: </b>{{$Supplier->province}}</li>
-                    <li class="list-group-item"><b>Postal Code: </b>{{$Supplier->postal_code}}</li>
-                    <li class="list-group-item"><b>Phone Number: </b>{{$Supplier->phone_number}}</li>
-                    <li class="list-group-item"><b>Bank: </b>{{$Supplier->bank}}</li>
-                    <li class="list-group-item"><b>No Rek: </b>{{$Supplier->no_rek}}</li>
+                    <div class="form-group">
+                        <label for="id">ID</label> <br>
+                        <input type="text" name="id" class="form-control" id="id" value="{{$Supplier->id}}" readonly aria-describedby="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label> <br>
+                        <input type="text" name="name" class="form-control" id="name" value="{{$Supplier->name}}" readonly aria-describedby="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="company_name">Company Name</label> <br>
+                        <input type="text" name="company_name" class="form-control" id="company_name" value="{{$Supplier->company_name}}" readonly aria-describedby="company_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label> <br>
+                        <input type="text" name="address" class="form-control" id="address" value="{{$Supplier->address}}" readonly aria-describedby="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="districts">Districts</label> <br>
+                        <input type="text" name="districts" class="form-control" id="districts" value="{{$Supplier->districts}}" readonly aria-describedby="districts">
+                    </div>
+                    <div class="form-group">
+                        <label for="province">Province</label> <br>
+                        <input type="text" name="province" class="form-control" id="province" value="{{$Supplier->province}}" readonly aria-describedby="province">
+                    </div>
+                    <div class="form-group">
+                        <label for="postal_code">Postal Code</label> <br>
+                        <input type="text" name="postal_code" class="form-control" id="postal_code" value="{{$Supplier->postal_code}}" readonly aria-describedby="postal_code">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label> <br>
+                        <input type="text" name="phone_number" class="form-control" id="phone_number" value="{{$Supplier->phone_number}}" readonly aria-describedby="phone_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="bank">Bank</label> <br>
+                        <input type="text" name="bank" class="form-control" id="bank" value="{{$Supplier->bank}}" readonly aria-describedby="bank">
+                    </div>
+                    <div class="form-group">
+                        <label for="no_rek">No Rekening</label> <br>
+                        <input type="text" name="no_rek" class="form-control" id="no_rek" value="{{$Supplier->no_rek}}" readonly aria-describedby="no_rek">
+                    </div>
                 </ul>
             </div>
             <a class="btn btn-success mt3" href="{{route('supplier.index')}}">Kembali</a>
         </div>
     </div>
+    <br><br><br>
 </div>
 @endsection
