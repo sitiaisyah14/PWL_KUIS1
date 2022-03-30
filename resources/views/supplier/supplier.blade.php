@@ -68,6 +68,15 @@ Aide Shoes
                     </div>
                     @endif
                 </div>
+
+                <form action="{{ url()->current() }}" method="get" class="form-inline">
+                    <div class="relative mx-sm-3 mb-2">
+                      <input type="search" name="keyword" value="{{ request('keyword') }}" placeholder="Search your data....." class="form-control">
+                      <button type="submit" class="btn btn-secondary mb-1"> Search</button>
+                      <a type="submit" class="btn btn-info mb-1" href="{{route('supplier.index')}}"> Refresh</a>
+                    </div>
+                </form>
+
                 <div class="float-right my-2">
                     <a class="btn btn-success" href="{{route('supplier.create')}}"> Tambah Data Supplier</a>
                 </div>
