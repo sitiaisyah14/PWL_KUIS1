@@ -19,8 +19,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ItemController;
-use App\Http\Controllers\SupplierController;
+
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('products', [ProductsController::class, 'products'])->name('products');
@@ -29,7 +30,7 @@ Route::get('contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::get('employee', [EmployeeController::class, 'employee'])->name('employee');
 Route::resource('item',ItemController::class);
-Route::get('supplier', [SupplierController::class, 'supplier'])->name('supplier');
+Route::resource('supplier', SupplierController::class);
 Route::get('customer', [CustomerController::class, 'customer'])->name('customer');
 
 Route::get('login', [HomeContrPoller::class,'login']);
