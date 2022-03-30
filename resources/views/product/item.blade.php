@@ -58,9 +58,9 @@ Aide Shoes | Item
                 <div class="section-heading">
                     <h2>Table Item</h2>
                 </div>
-            </div>
-            <div class="float-right my-2">
-                <a href="{{route('item.create')}}" class="btn btn-success">Tambah Data Barang</a>
+                <div class="float-right my-2">
+                    <a href="{{route('item.create')}}" class="btn btn-success">Tambah Data Barang</a>
+                </div>
             </div>
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
