@@ -12,11 +12,30 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $Employee = Employee::orderBy('id')->paginate(6);
-        return view('employee.employee', compact('Employee'))
-            ->with('i', (request()->input('page', 1)-1)*5);
+        $pagination  = 5;
+        $Employee = Employee::when($request->keyword, function ($query) use ($request) {
+            $query
+        ->where('name', 'like', "%{$request->keyword}%")
+        ->orWhere('username', 'like', "%{$request->keyword}%")
+        ->orWhere('password', 'like', "%{$request->keyword}%")
+        ->orWhere('email', 'like', "%{$request->keyword}%")
+        ->orWhere('gender', 'like', "%{$request->keyword}%")
+        ->orWhere('place_of_birth', 'like', "%{$request->keyword}%")
+        ->orWhere('date_of_birth', 'like', "%{$request->keyword}%")
+        ->orWhere('phone_number', 'like', "%{$request->keyword}%")
+        ->orWhere('status', 'like', "%{$request->keyword}%")
+        ->orWhere('position', 'like', "%{$request->keyword}%")
+        ->orWhere('wages', 'like', "%{$request->keyword}%");
+        })->orderBy('id')->paginate($pagination);
+
+        $Employee->appends($request->only('keyword'));
+
+        return view('employee.employee', [
+            'title'    => 'Employee',
+            'Employee' => $Employee,
+        ])->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**
