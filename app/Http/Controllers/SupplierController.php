@@ -12,12 +12,30 @@ class SupplierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Fungsi elaquent menampilkan data menggunakan pagination
-        $Suppliers = Supplier::orderBy('id')->paginate(6);
-        return view('supplier.supplier', compact('Suppliers'))
-            ->with('i', (request()->input('page', 1)-1)*5);
+
+        $pagination  = 5;
+        $Suppliers = Supplier::when($request->keyword, function ($query) use ($request) {
+            $query
+        ->where('name', 'like', "%{$request->keyword}%")
+        ->orWhere('company_name', 'like', "%{$request->keyword}%")
+        ->orWhere('address', 'like', "%{$request->keyword}%")
+        ->orWhere('districts', 'like', "%{$request->keyword}%")
+        ->orWhere('province', 'like', "%{$request->keyword}%")
+        ->orWhere('postal_code', 'like', "%{$request->keyword}%")
+        ->orWhere('phone_number', 'like', "%{$request->keyword}%")
+        ->orWhere('bank', 'like', "%{$request->keyword}%")
+        ->orWhere('no_rek', 'like', "%{$request->keyword}%");
+        })->orderBy('id')->paginate($pagination);
+
+        $Suppliers->appends($request->only('keyword'));
+
+        return view('supplier.supplier', [
+            'title'    => 'Suppliers',
+            'Suppliers' => $Suppliers,
+        ])->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**
@@ -133,4 +151,12 @@ class SupplierController extends Controller
             -> with('success', 'Supplier Berhasil Dihapus');
 
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     */
+
+
+
 }
