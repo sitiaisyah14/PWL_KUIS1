@@ -28,7 +28,7 @@ Route::get('products', [ProductsController::class, 'products'])->name('products'
 Route::get('about', [AboutController::class, 'about'])->name('about');
 Route::get('contact', [ContactController::class, 'contact'])->name('contact');
 
-Route::get('employee', [EmployeeController::class, 'employee'])->name('employee');
+Route::resource('employee', EmployeeController::class);
 Route::resource('item',ItemController::class);
 Route::resource('supplier', SupplierController::class);
 Route::get('customer', [CustomerController::class, 'customer'])->name('customer');
