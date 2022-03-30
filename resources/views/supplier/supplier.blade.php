@@ -72,51 +72,52 @@ Aide Shoes
                     <a class="btn btn-success" href="{{route('supplier.create')}}"> Tambah Data Supplier</a>
                 </div>
             </div>
+            <div class="table-responsive-lg">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Districts</th>
+                            <th scope="col">Province</th>
+                            <th scope="col">Postal Code</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Bank</th>
+                            <th scope="col">Account Number</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    @foreach ($Suppliers as $Supplier)
+                    <tbody>
+                        <tr>
+                            <td scope="row">{{$Supplier->id}}</td>
+                            <td>{{$Supplier->name}}</td>
+                            <td>{{$Supplier->company_name}}</td>
+                            <td>{{$Supplier->address}}</td>
+                            <td>{{$Supplier->districts}}</td>
+                            <td>{{$Supplier->province}}</td>
+                            <td>{{$Supplier->postal_code}}</td>
+                            <td>{{$Supplier->phone_number}}</td>
+                            <td>{{$Supplier->bank}}</td>
+                            <td>{{$Supplier->no_rek}}</td>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Company</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Districts</th>
-                        <th scope="col">Province</th>
-                        <th scope="col">Postal Code</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Bank</th>
-                        <th scope="col">Account Number</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                @foreach ($Suppliers as $Supplier)
-                <tbody>
-                    <tr>
-                        <td scope="row">{{$Supplier->id}}</td>
-                        <td>{{$Supplier->name}}</td>
-                        <td>{{$Supplier->company_name}}</td>
-                        <td>{{$Supplier->address}}</td>
-                        <td>{{$Supplier->districts}}</td>
-                        <td>{{$Supplier->province}}</td>
-                        <td>{{$Supplier->postal_code}}</td>
-                        <td>{{$Supplier->phone_number}}</td>
-                        <td>{{$Supplier->bank}}</td>
-                        <td>{{$Supplier->no_rek}}</td>
+                            <td>
+                                <form action="{{ route('supplier.destroy',  $Supplier->id) }}" method="POST">
+                                    <a class="btn btn-info" href="{{route('supplier.show', $Supplier->id)}}">Show</a> <br> <br>
+                                    <a class="btn btn-primary" href="{{route('supplier.edit', $Supplier->id)}}">Edit</a> <br> <br>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    @endforeach
+                </table>
+            </div>
 
-                        <td>
-                            <form action="{{ route('supplier.destroy',  $Supplier->id) }}" method="POST">
-                                <a class="btn btn-info" href="{{route('supplier.show', $Supplier->id)}}">Show</a>
-                                <a class="btn btn-primary" href="{{route('supplier.edit', $Supplier->id)}}">Edit</a>
-
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
         </div>
     </div>
 </div>
