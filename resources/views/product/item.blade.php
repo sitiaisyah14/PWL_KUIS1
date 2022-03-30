@@ -59,6 +59,14 @@ Aide Shoes | Item
                     <h2>Table Item</h2>
                 </div>
             </div>
+            <div class="float-right my-2">
+                <a href="{{route('item.create')}}" class="btn btn-success">Tambah Data Barang</a>
+            </div>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{$message}}</p>
+                </div>
+            @endif
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -70,35 +78,47 @@ Aide Shoes | Item
                         <th scope="col">Size</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Price</th>
+                        <th width="280px" scope="col">Action</th>
                     </tr>
                 </thead>
-                @foreach ($item as $a)
+                @foreach ($items as $barang)
                 <tbody>
                     <tr>
-                        <td>{{$a->id}}</td>
-                        <td>{{$a->id_supplier}}</td>
-                        <td> <img height="100" width="100" src="{{$a->gambar_sepatu}}" alt="image"></td>
-                        <td>{{$a->merk_sepatu}}</td>
-                        <td>{{$a->jenis_sepatu}}</td>
-                        <td>{{$a->no_sepatu}}</td>
-                        <td>{{$a->stok}}</td>
-                        <td>{{$a->harga}}</td>
+                        <td>{{$barang->id}}</td>
+                        <td>{{$barang->id_supplier}}</td>
+                        <td> <img height="100" width="100" src="{{asset('gambar_sepatu/'.$barang->gambar_sepatu)}}" alt="image"></td>
+                        <td>{{$barang->merk_sepatu}}</td>
+                        <td>{{$barang->jenis_sepatu}}</td>
+                        <td>{{$barang->no_sepatu}}</td>
+                        <td>{{$barang->stok}}</td>
+                        <td>{{$barang->harga}}</td>
+
+                        <td>
+                            <form action="{{route('item.destroy',$barang->id)}}" method="post">
+                                <a href="{{route('item.show',$barang->id)}}" class="btn btn-info">Show</a>
+                                <a href="{{route('item.edit',$barang->id)}}" class="btn btn-primary">Edit</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
 
+
             <div class="paginate">
                 <div class="container">
                     <div class="row">
                         <div class="detail-data col-md-12">
-                            <p>Page : {{ $item->currentPage() }} <br />
-                                Jumlah Data : {{ $item->total() }} <br />
-                                Data Per Halaman : {{ $item->perPage() }} <br />
+                            <p>Page : {!! $items->currentPage() !!} <br />
+                                Jumlah Data : {!! $items->total() !!} <br />
+                                Data Per Halaman : {!! $items->perPage() !!} <br />
                             </p>
                         </div>
                         <div class="paginate-button col-md-12">
-                            {{$item->links()}}
+                            {!! $items->links() !!}
                         </div>
                     </div>
                 </div>
