@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="date_of_birth">Date Of Birth</label> <br>
-                        <input type="text" name="date_of_birth" class="form-control" id="date_of_birth" aria-describedby="date_of_birth">
+                        <input type="date" name="date_of_birth" class="form-control" id="date_of_birth" aria-describedby="date_of_birth">
                     </div>
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label> <br>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group">
                         <label for="wages">Wages</label> <br>
-                        <input type="text" name="wages" class="form-control" id="wages" aria-describedby="wages">
+                        <input type="number" name="wages" class="form-control" id="wages" aria-describedby="wages">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
