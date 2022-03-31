@@ -57,55 +57,94 @@ Aide Shoes | Customers
                 <div class="section-heading">
                     <h2>Table Customer</h2>
                 </div>
-            </div>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">Place Of Birth</th>
-                        <th scope="col">Date Of Birth</th>
-                        <th scope="col" width="20%">Address</th>
-                        <th scope="col">Telephone</th>
-                    </tr>
-                </thead>
-                @foreach ($customer as $a)
-                <tbody>
-                    <tr>
-                        <td>{{$a->id}}</td>
-                        <td> <img height="100" width="100" src="{{$a->foto_customer}}" alt="image"></td>
-                        <td>{{$a->nama_customer}}</td>
-                        <td>{{$a->gender}}</td>
-                        <td>{{$a->tempat_lahir}}</td>
-                        <td>{{$a->tgl_lahir}}</td>
-                        <td>{{$a->alamat}}</td>
-                        <td>{{$a->no_hp}}</td>
-
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
-
-            <div class="paginate">
-                <div class="container">
-                    <div class="row">
-                        <div class="detail-data col-md-12">
-                            <p>Halaman : {{ $customer->currentPage() }} <br />
-                                Jumlah Data : {{ $customer->total() }} <br />
-                                Data Per Halaman : {{ $customer->perPage() }} <br />
-                            </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{$message}}
                         </div>
-                        <div class="paginate-button col-md-12">
-                            {{$customer->links()}}
+                        @endif
+                    </div>
+                    <div class="col-md-6">
+                        <div class="float-left">
+                            <a href="{{route('customer.create')}}" class="btn btn-success">Tambah Data Customer</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="float-right">
+                            <form action="{{url()->current()}}" method="get" class="form-inline">
+                                <div class="relative mx-auto">
+                                    <input type="search" name="keyword" value="{{request('keyword')}}" placeholder="Search"
+                                    class="form-control mr-sm-2">
+                                    <button type="submit" class="btn btn-outline-success my-2">Cari</button>
+                                    <a type="submit" class="btn btn-info" href="{{route('customer.index')}}"> Refresh</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col" width="10%">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" width="10%">Email</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Place Of Birth</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col" width="10%"">Address</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                @foreach ($customers as $customer)
+                <tbody>
+                    <tr>
+                        <td>{{$customer->id}}</td>
+                        <td> <img height="100" width="100" src="{{asset('foto_customer/'.$customer->foto_customer)}}" alt="image"></td>
+                        <td>{{$customer->nama_customer}}</td>
+                        <td>{{$customer->email}}</td>
+                        <td>{{$customer->gender}}</td>
+                        <td>{{$customer->tempat_lahir}}</td>
+                        <td>{{$customer->tgl_lahir}}</td>
+                        <td>{{$customer->alamat}}</td>
+                        <td>{{$customer->no_hp}}</td>
+                        <td>
+                            <form action="{{route('customer.destroy',$customer->id)}}" method="post">
+                                <a href="{{route('customer.show',$customer->id)}}" class="btn btn-info">Show</a>
+                                <a href="{{route('customer.edit',$customer->id)}}" class="btn btn-primary">Edit</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+        </div>
     </div>
 </div>
+<div class="paginate">
+    <div class="container">
+        <div class="row">
+            <div class="detail-data col-md-12">
+                <p>Halaman : {!! $customers->currentPage() !!} <br />
+                    Jumlah Data : {!! $customers->total() !!} <br />
+                    Data Per Halaman : {!! $customers->perPage() !!} <br />
+                </p>
+            </div>
+            <div class="paginate-button col-md-12">
+                {!! $customers->links() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('js')
