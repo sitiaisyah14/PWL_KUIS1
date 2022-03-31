@@ -5,8 +5,8 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
-        <div class="card" style="width:24rem">
-            <div class="card-header">
+        <div class="card mb-4" style="width:24rem">
+            <div class="card-header bg-danger text-white">
                 Tambah Item
             </div>
             <div class="card-body">
@@ -53,7 +53,7 @@
                             aria-describedby="harga">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
                 </form>
             </div>
         </div>
