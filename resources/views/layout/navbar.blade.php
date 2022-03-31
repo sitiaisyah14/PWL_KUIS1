@@ -23,7 +23,7 @@
                         <a class="nav-link" href="{{route('item.index')}}" id="item">Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('customer')}}" id="customer">Customer</a>
+                        <a class="nav-link" href="{{route('customer.index')}}" id="customer">Customer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('supplier.index')}}" id="supplier">Supplier</a>
