@@ -12,15 +12,22 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //fungsi eloquent menampilkan data menggunakan pagination
-        // $items = Item::all();
-        $items = Item::orderBy('id')->paginate(5);
 
+        $pagination = 5;
+        $items = Item::when($request->keyword, function($query) use ($request){
+            $query
+            ->where('merk_sepatu','like',"%{$request->keyword}%")
+            ->orWhere('jenis_sepatu','like',"%{$request->keyword}%")
+            ->orWhere('no_sepatu','like',"%{$request->keyword}%")
+            ->orWhere('harga','like',"%{$request->keyword}}%");
+        })->orderBy('id')->paginate($pagination);
+
+        $items->appends($request->only('keyword'));
         return view('product.item',compact('items'))
-            ->with('i',(request()->input('page',1)-1)*5);
-
+            ->with('i',($request->input('page',1)-1)*$pagination);
     }
 
     /**
@@ -54,7 +61,6 @@ class ItemController extends Controller
 
 
         // //fungsi eloquent untuk menambah data
-        // Item::create($request->all());
         $item = $request->all();
 
         if ($image = $request->file('gambar_sepatu')) {
