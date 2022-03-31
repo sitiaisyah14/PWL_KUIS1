@@ -19,7 +19,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ItemController;
-
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 
