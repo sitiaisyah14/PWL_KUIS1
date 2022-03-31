@@ -58,15 +58,34 @@ Aide Shoes | Item
                 <div class="section-heading">
                     <h2>Table Item</h2>
                 </div>
-                <div class="float-right my-2">
-                    <a href="{{route('item.create')}}" class="btn btn-success">Tambah Data Barang</a>
+                <div class="row">
+                    <div class="col-md-12">
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{$message}}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="col-md-6">
+                        <div class="float-left">
+                            <a href="{{route('item.create')}}" class="btn btn-success">Tambah Data Barang</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="float-right">
+                            <form action="{{url()->current()}}" method="get" class="form-inline">
+                                <div class="relative mx-auto">
+                                    <input type="search" name="keyword" value="{{request('keyword')}}"
+                                    placeholder="Search" class="form-control mr-sm-2">
+                                    <button type="submit" class="btn btn-outline-success my-2">Cari</button>
+                                    <a type="submit" class="btn btn-info" href="{{route('item.index')}}"> Refresh</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{$message}}</p>
-                </div>
-            @endif
+         <div class="table-responsive-sm">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -106,22 +125,21 @@ Aide Shoes | Item
                 </tbody>
                 @endforeach
             </table>
-
-
-            <div class="paginate">
-                <div class="container">
-                    <div class="row">
-                        <div class="detail-data col-md-12">
-                            <p>Page : {!! $items->currentPage() !!} <br />
-                                Jumlah Data : {!! $items->total() !!} <br />
-                                Data Per Halaman : {!! $items->perPage() !!} <br />
-                            </p>
-                        </div>
-                        <div class="paginate-button col-md-12">
-                            {!! $items->links() !!}
-                        </div>
-                    </div>
-                </div>
+         </div>
+        </div>
+    </div>
+</div>
+<div class="paginate">
+    <div class="container">
+        <div class="row">
+            <div class="detail-data col-md-12">
+                <p>Page : {!! $items->currentPage() !!} <br />
+                    Jumlah Data : {!! $items->total() !!} <br />
+                    Data Per Halaman : {!! $items->perPage() !!} <br />
+                </p>
+            </div>
+            <div class="paginate-button col-md-12">
+                {!! $items->links() !!}
             </div>
         </div>
     </div>
