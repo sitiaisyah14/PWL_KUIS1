@@ -5,8 +5,8 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem">
-            <div class="card-header">
+        <div class="card mb-4" style="width: 30rem">
+            <div class="card-header bg-danger text-white">
                 Edit Item
             </div>
             <div class="card-body">
@@ -50,8 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="stok">Stok</label>
-                        <input type="number" name="stok" class="form-control" id="stok"
-                            aria-describedby="stok" value="{{$barang->stok}}">
+                        <input type="number" name="stok" class="form-control" id="stok" aria-describedby="stok" value="{{$barang->stok}}">
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga</label>
@@ -59,7 +58,7 @@
                             aria-describedby="harga" value="{{$barang->harga}}">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
                 </form>
             </div>
         </div>
