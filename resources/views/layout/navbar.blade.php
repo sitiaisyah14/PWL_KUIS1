@@ -31,6 +31,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('employee.index')}}" id="employee">Employee</a>
                     </li>
+                    @if (Auth::user())
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                          {{Auth()->user()->name}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item">Position : {{Auth()->user()->position}}</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form action="{{route('logout')}}" id="logout-form" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        </div>
+                    </li>
+                    @else
+                        <li class="nav-item ">
+                            <a class="btn btn-primary" href="{{ route('login') }}">
+                                {{ __('Login') }}
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
