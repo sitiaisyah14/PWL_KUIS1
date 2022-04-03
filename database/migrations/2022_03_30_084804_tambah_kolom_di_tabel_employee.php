@@ -16,6 +16,7 @@ class TambahKolomDiTabelEmployee extends Migration
         Schema::table('employees', function (Blueprint $table) {
             $table->string('username', 20)->after('name')->nullable()->unique();
             $table->string('password', 20)->after('username')->nullable();
+            $table->rememberToken();
             $table->string('email', 50)->after('password')->nullable()->unique();
         });
     }
