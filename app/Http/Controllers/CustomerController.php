@@ -153,4 +153,9 @@ class CustomerController extends Controller
         return redirect()->route('customer.index')
         ->with('success','Customer Berhasil Dihapus');
     }
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
 }
