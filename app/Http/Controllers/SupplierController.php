@@ -156,7 +156,9 @@ class SupplierController extends Controller
      * Remove the specified resource from storage.
      *
      */
-
-
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
 
 }

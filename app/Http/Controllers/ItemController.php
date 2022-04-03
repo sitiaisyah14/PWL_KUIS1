@@ -153,4 +153,9 @@ class ItemController extends Controller
         return redirect()->route('item.index')
         ->with('success','Item Berhasil Dihapus');
     }
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
 }

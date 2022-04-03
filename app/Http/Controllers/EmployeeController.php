@@ -152,4 +152,8 @@ class EmployeeController extends Controller
         return redirect()->route('employee.index')
             -> with('success', 'Employee Berhasil Dihapus');
     }
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
 }
