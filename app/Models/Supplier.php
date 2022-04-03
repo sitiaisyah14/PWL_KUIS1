@@ -13,7 +13,6 @@ class Supplier extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id',
         'name',
         'company_name',
         'address',
