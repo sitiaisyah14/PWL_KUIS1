@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Model;
 
 class Employee extends Model
 {
@@ -12,8 +13,18 @@ class Employee extends Model
     protected $table = 'employees';
     protected $primaryKey = 'id';
 
+    //login
+    protected $guarded =['username'];
+    protected $hidden =[
+        'password','remember_token',
+    ];
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
+
     protected $fillable = [
-        'id',
         'name',
         'username',
         'password',
