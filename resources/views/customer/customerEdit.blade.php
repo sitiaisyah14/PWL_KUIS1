@@ -38,8 +38,10 @@
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <small class="form-text text-muted">contoh : P</small>
-                        <input type="text" name="gender" value="{{$customer->gender}}" class="form-control" id="gender" aria-describedby="gender" placeholder="P/L">
+                        <select class="form-control" aria-label="Default select example" name="gender" id="gender" required>
+                            <option value="P" @if($customer->gender =="P")selected @endif>Perempuan</option>
+                            <option value="L" @if($customer->gender =="L")selected @endif>Laki-Laki</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="tempat_lahir">Tempat Lahir</label>

@@ -38,7 +38,11 @@
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label> <br>
-                        <input type="text" name="gender" class="form-control" id="gender" aria-describedby="gender">
+                        <select class="form-control @error('gender') is-invalid
+                            @enderror" aria-label="Default select example" name="gender" id="gender" required>
+                                <option value="P" @if(old('gender')=="P")selected @endif>Perempuan</option>
+                                <option value="L" @if(old('gender')=="L")selected @endif>Laki-Laki</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="place_of_birth">Place Of Birth</label> <br>
@@ -54,11 +58,29 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label> <br>
-                        <input type="text" name="status" class="form-control" id="status" aria-describedby="status">
+                        <select class="form-control @error('status') is-invalid
+                        @enderror" aria-label="Default select example" name="status" id="status" required>
+                            <option value="Belum Kawin" @if(old('status')=='Belum Kawin')selected @endif>Belum Kawin</option>
+                            <option value="Sudah Kawin" @if(old('status')=='Sudah Kawin')selected @endif>Sudah Kawin</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="position">Position</label> <br>
-                        <input type="text" name="position" class="form-control" id="position" aria-describedby="position">
+                        <select class="form-control @error('position') is-invalid
+                            @enderror" aria-label="Default select example" name="position" id="position" required>
+                                <option @if(old('position')=='Owner')selected @endif value="Owner">Owner</option>
+                                <option value="Chief Executive Officer (CEO)" @if(old('position')=='Chief Executive Officer (CEO)')selected @endif>Chief Executive Officer (CEO)</option>
+                                <option @if(old('position')=='Chief Financial Officer (CFO)')selected @endif value="Chief Financial Officer (CFO)" >Chief Financial Officer (CFO)</option>
+                                <option @if(old('position')=='Chief Technology Officer (CTO)')selected @endif value="Chief Technology Officer (CTO)" >Chief Technology Officer (CTO)</option>
+                                <option @if(old('position')=='Head of Production')selected @endif value="Head of Production" >Head of Production</option>
+                                <option @if(old('position')=='Head of Marketing')selected @endif value="Head of Marketing" >Head of Marketing</option>
+                                <option @if(old('position')=='Head of Warehouse')selected @endif value="Head of Warehouse" >Head of Warehouse</option>
+                                <option @if(old('position')=='Quality Control')selected @endif value="Quality Control" >Quality Control</option>
+                                <option @if(old('position')=='Production Employee')selected @endif value="Production Employee" >Production Employee</option>
+                                <option @if(old('position')=='Warehouse employee')selected @endif value="Warehouse employee" >Warehouse employee</option>
+                                <option @if(old('position')=='Marketing Employee')selected @endif value="Marketing Employee" >Marketing Employee</option>
+                                <option @if(old('position')=='Admin')selected @endif value="Admin" >Admin</option>
+                              </select>
                     </div>
                     <div class="form-group">
                         <label for="wages">Wages</label> <br>

@@ -40,7 +40,11 @@
                         </div>
                         <div class="form-group">
                             <label for="gender">Gender</label> <br>
-                            <input type="text" name="gender" class="form-control" id="gender" value="{{$Employee->gender}}" aria-describedby="gender">
+                            <select class="form-control @error('gender') is-invalid
+                            @enderror" aria-label="Default select example" name="gender" id="gender" required>
+                                <option value="P" @if($Employee->gender =="P")selected @endif>Perempuan</option>
+                                <option value="L" @if($Employee->gender =="L")selected @endif>Laki-Laki</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="place_of_birth">Place Of Birth</label> <br>
@@ -56,11 +60,29 @@
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label> <br>
-                            <input type="text" name="status" class="form-control" id="status" value="{{$Employee->status}}" aria-describedby="status">
+                            <select class="form-control @error('status') is-invalid
+                        @enderror" aria-label="Default select example" name="status" id="status" required>
+                            <option value="Belum Kawin" @if($Employee->status =='Belum Kawin')selected @endif>Belum Kawin</option>
+                            <option value="Sudah Kawin" @if($Employee->status =='Sudah Kawin')selected @endif>Sudah Kawin</option>
+                        </select>
                         </div>
                         <div class="form-group">
                             <label for="position">Position</label> <br>
-                            <input type="text" name="position" class="form-control" id="position" value="{{$Employee->position}}" aria-describedby="position">
+                            <select class="form-control @error('position') is-invalid
+                            @enderror" aria-label="Default select example" name="position" id="position" required>
+                                <option @if($Employee->position =='Chief Financial Officer (CFO)')selected @endif value="Owner">Owner</option>
+                                <option @if($Employee->position =='Chief Executive Officer (CEO)')selected @endif value="Chief Executive Officer (CEO)" >Chief Executive Officer (CEO)</option>
+                                <option @if($Employee->position =='Chief Financial Officer (CFO)')selected @endif value="Chief Financial Officer (CFO)" >Chief Financial Officer (CFO)</option>
+                                <option @if($Employee->position =='Chief Technology Officer (CTO)')selected @endif value="Chief Technology Officer (CTO)" >Chief Technology Officer (CTO)</option>
+                                <option @if($Employee->position =='Head of Production')selected @endif value="Head of Production" >Head of Production</option>
+                                <option @if($Employee->position =='Head of Marketing')selected @endif value="Head of Marketing" >Head of Marketing</option>
+                                <option @if($Employee->position =='Head of Warehouse')selected @endif value="Head of Warehouse" >Head of Warehouse</option>
+                                <option @if($Employee->position =='Quality Control')selected @endif value="Quality Control" >Quality Control</option>
+                                <option @if($Employee->position =='Production Employee')selected @endif value="Production Employee" >Production Employee</option>
+                                <option @if($Employee->position =='Warehouse employee')selected @endif value="Warehouse employee" >Warehouse employee</option>
+                                <option @if($Employee->position =='Marketing Employee')selected @endif value="Marketing Employee" >Marketing Employee</option>
+                                <option @if($Employee->position =='Admin')selected @endif value="Admin" >Admin</option>
+                              </select>
                         </div>
                         <div class="form-group">
                             <label for="wages">Wages</label> <br>
