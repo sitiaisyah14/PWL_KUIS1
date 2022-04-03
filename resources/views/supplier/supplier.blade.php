@@ -115,10 +115,14 @@ Aide Shoes
                             <td>
                                 <form action="{{ route('supplier.destroy',  $Supplier->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{route('supplier.show', $Supplier->id)}}">Show</a> <br> <br>
+                                    @if (auth()->user()->position=='Admin')
                                     <a class="btn btn-primary" href="{{route('supplier.edit', $Supplier->id)}}">Edit</a> <br> <br>
+                                    @endif
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    @if (auth()->user()->position=='Admin')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    @endif
                                 </form>
                             </td>
                         </tr>

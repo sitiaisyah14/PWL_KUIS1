@@ -116,10 +116,14 @@ Aide Shoes | Customers
                         <td>
                             <form action="{{route('customer.destroy',$customer->id)}}" method="post">
                                 <a href="{{route('customer.show',$customer->id)}}" class="btn btn-info">Show</a>
-                                <a href="{{route('customer.edit',$customer->id)}}" class="btn btn-primary">Edit</a>
+                                @if (auth()->user()->position=='Admin')
+                                    <a href="{{route('customer.edit',$customer->id)}}" class="btn btn-primary">Edit</a>
+                                @endif
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                @if (auth()->user()->position=='Admin')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                @endif
                             </form>
                         </td>
                     </tr>

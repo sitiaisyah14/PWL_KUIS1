@@ -116,11 +116,14 @@ Aide Shoes
                             <td>
                                 <form action="{{ route('employee.destroy',  $data->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{route('employee.show', $data->id)}}">Show</a> <br> <br>
+                                    @if (auth()->user()->position=='Admin')
                                     <a class="btn btn-primary" href="{{route('employee.edit', $data->id)}}">Edit</a> <br> <br>
-
+                                    @endif
                                     @csrf
                                     @method('DELETE')
+                                    @if (auth()->user()->position=='Admin')
                                     <button type="submit" class="btn btn-danger">Delete</button>
+                                    @endif
                                 </form>
                             </td>
                         </tr>
